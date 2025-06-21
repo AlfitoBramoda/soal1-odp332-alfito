@@ -6,12 +6,12 @@
 
 function checkOddEven(number) {
     if(typeof number !== "number"){
-        return "Bukan Angka"
+        return "invalid input"
     }
     if(number % 2 === 0){
-        return "Angka Genap"
+        return "genap"
     } else{
-        return "Angka Ganjil"
+        return "ganjil"
     }
 }
 
@@ -27,7 +27,7 @@ console.log(checkOddEven("enam"), "==> INI LINE 20 (SOAL 1)"); // invalid input
 
 function checkMature(umur) {
     if(typeof umur !== "number" || umur < 0){
-        return "Input Tidak Sesuai"
+        return "invalid input"
     }
     if(umur >= 18){
         return "Dewasa"
@@ -55,7 +55,7 @@ console.log(checkMature(-1), "==> INI LINE 42 (SOAL 2)"); // invalid input
 
 function scoreReport(nilai) {
     if(typeof nilai !== "number" || nilai < 0 || nilai > 100) {
-        return "Input Tidak Sesuai"
+        return "invalid input"
     }
     if(nilai >= 90){
         return "A"
@@ -86,7 +86,8 @@ console.log(scoreReport("sembilan puluh"), "==> INI LINE 79 (SOAL 3)"); // inval
 
 function loopCheckOddEven(number) {
     if (typeof number !== "number") {
-        return "Input Bukan Angka"
+        console.log("invalid input")
+        return
     }
     for (let index = 1; index <= number; index++) {
         if (index % 2 !== 0) {
@@ -114,7 +115,7 @@ loopCheckOddEven("lima") // invalid input
 
 function totalValue(inputNumber) {
     if (typeof inputNumber !== "number") {
-        return "Input Bukan Angka"
+        return "invalid input"
     }
     let totalNumber = 0
     for (let index = 1; index <= inputNumber; index++) {
@@ -279,9 +280,48 @@ console.log(reverseArray(['a', 'b', 'c']), "==> INI LINE 274 (SOAL 10)"); // Out
  */
 
 const isPalindrome = (inputUser) => {
-    
+    const inputArr = inputUser.toLowerCase().split(' ')
+    if (inputArr.length == 1) {
+        const char = inputArr[0].split('')
+        let revArr = []
+        for (let index = char.length - 1; index >= 0 ; index--) {
+            revArr.push(char[index])
+        }
+        let revWord
+        for (let index = 0; index < revArr.length; index++) {
+            if (index == 0) {
+                revWord = revArr[index]
+            } else {
+                revWord = revWord + revArr[index]
+            }
+        }
+        if(inputUser === revWord){
+            return true
+        } else{
+            return false
+        }
+    } else {
+        const char = inputArr[1].split('')
+        let revArr = []
+        for (let index = char.length - 1; index >= 0 ; index--) {
+            revArr.push(char[index])
+        }
+        let revWord
+        for (let index = 0; index < revArr.length; index++) {
+            if (index == 0) {
+                revWord = revArr[index]
+            } else {
+                revWord = revWord + revArr[index]
+            }
+        }
+        if(inputArr[0] === revWord){
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
-console.log(isPalindrome("kasur rusak")); // true
-console.log(isPalindrome("kodok")); // true
-console.log(isPalindrome("makan malam")); // false
+console.log(isPalindrome("kasur rusak"), "==> INI LINE 324 (SOAL 11)"); // true
+console.log(isPalindrome("kodok"), "==> INI LINE 325 (SOAL 11)"); // true
+console.log(isPalindrome("makan malam"), "==> INI LINE 326 (SOAL 11)"); // false
