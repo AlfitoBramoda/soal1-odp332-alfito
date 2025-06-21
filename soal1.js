@@ -1,6 +1,17 @@
 // Jumlahkan semua angka genap dalam array berikut
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-let resultOne
+let resultOne = (inputNumber) => {
+    // console.log(inputNumber)
+    let total = 0
+    for (let index = 1; index <= inputNumber.length; index++) {
+        if(index % 2 === 0){
+            total = total + index
+            // console.log(total)
+        }
+    }
+    return total
+}
+console.log(resultOne(numbers))
 
 
 const numbersTwo = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -29,7 +40,7 @@ const items = [
     { name: 'Pen', price: 5000 },
     { name: 'Pencil', price: 3000 },
 ];
-  
+
 
 //Ambil hanya angka unik dari array (hapus duplikat).
 const numbersThree = [1, 2, 2, 3, 4, 4, 5];
