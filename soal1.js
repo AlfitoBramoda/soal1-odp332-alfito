@@ -11,17 +11,30 @@ let resultOne = (inputNumber) => {
     }
     return total
 }
-console.log(resultOne(numbers))
+console.log(resultOne(numbers), "==> INI LINE 14 (SOAL 1)")
 
 
 const numbersTwo = [1, 2, 3, 4, 5, 6, 7, 8];
 //Tambahkan semua angka ganjil dalam array dan kembalikan hasilnya.
-let resultTwo
+let resultTwo = (inputNumber) => {
+    let total = 0
+    for (let index = 1; index <= inputNumber.length; index++) {
+        if (index % 2 !== 0) {
+            total = total + index
+        }
+    }
+    return total
+}
+console.log(resultTwo(numbersTwo), "==> INI LINE 28 (SOAL 2)")
 
 
 // Ubah semua huruf kecil dalam array menjadi huruf besar
 let students = ["Tito", "arY", "Bostang"]
-let resultThree
+let resultThree = []
+students.forEach((el) => {
+    resultThree.push(el.toLowerCase())
+})
+console.log(resultThree, "==> INI LINE 37 (SOAL3)")
 
 
 // Ambil hanya nama-nama orang yang umurnya di atas 18 tahun.
