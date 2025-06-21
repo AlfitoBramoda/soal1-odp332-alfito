@@ -28,7 +28,7 @@ console.log(resultTwo(numbersTwo), "==> INI LINE 25 (SOAL 2)")
 let students = ["Tito", "arY", "Bostang"]
 let resultThree = []
 students.forEach((el) => {
-    resultThree.push(el.toLowerCase())
+    resultThree.push(el.toUpperCase())
 })
 console.log(resultThree, "==> INI LINE 33 (SOAL3)")
 
